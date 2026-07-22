@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CREDIT HOME — Choose a Landing Page Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:#0d0f13;color:#f2f0eb;line-height:1.6;padding:56px 24px;min-height:100vh}
+  .wrap{max-width:1080px;margin:0 auto}
+  .eyebrow{font-family:'Archivo';letter-spacing:.26em;text-transform:uppercase;font-size:.78rem;color:#ff8a3c;font-weight:700}
+  h1{font-family:'Archivo';font-weight:900;font-size:clamp(2rem,5vw,3.2rem);margin:12px 0 10px;line-height:1.05}
+  .sub{color:#9b9ba6;max-width:56ch;margin-bottom:44px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#16181e;border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);border-color:rgba(255,138,60,.5)}
+  .swatch{height:130px;display:flex;align-items:center;justify-content:center;font-family:'Archivo';font-weight:900;font-size:1.3rem;letter-spacing:.02em}
+  .s1{background:radial-gradient(400px 180px at 70% 0,rgba(200,164,92,.4),transparent),#0e1014;color:#e6cf98}
+  .s2{background:linear-gradient(135deg,#0a74d1,#0bb8a6);color:#fff}
+  .s3{background:radial-gradient(400px 180px at 40% 0,rgba(255,107,44,.5),transparent),#0b0b0d;color:#ffb020}
+  .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .body h3{font-family:'Archivo';font-weight:800;font-size:1.15rem}
+  .body p{font-size:.9rem;color:#9b9ba6;flex:1}
+  .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{font-size:.72rem;color:#c9c9d2;background:rgba(255,255,255,.06);padding:4px 10px;border-radius:100px}
+  .open{display:inline-block;margin-top:6px;text-align:center;background:#ff6b2c;color:#180a02;font-weight:700;font-family:'Archivo';padding:12px;border-radius:100px;text-decoration:none;transition:.2s}
+  .open:hover{background:#ffb020}
+  .note{margin-top:40px;font-size:.86rem;color:#7d7d88;border-top:1px solid rgba(255,255,255,.08);padding-top:22px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">CREDIT HOME · Website Concepts</span>
+  <h1>Pick your landing page.</h1>
+  <p class="sub">Three complete design directions for your mobile real estate brand. Same content — the 7-step process, the mobile-office differentiator, mission, reviews and contact — styled three different ways. Open each and choose your favorite.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="swatch s1">Aa · Luxury</div>
+      <div class="body">
+        <h3>Option 1 — Luxury Concierge</h3>
+        <p>Dark, elegant, gold accents with a refined serif. Positions CREDIT HOME as a premium, high-touch concierge service.</p>
+        <div class="tags"><span class="tag">Premium</span><span class="tag">Serif</span><span class="tag">Dark</span></div>
+        <a class="open" href="option1.html">View Option 1 →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="swatch s2">Aa · Coastal</div>
+      <div class="body">
+        <h3>Option 2 — Coastal Trust</h3>
+        <p>Bright, airy and friendly with ocean-blue and teal. Approachable and trust-building — great for first-time buyers.</p>
+        <div class="tags"><span class="tag">Friendly</span><span class="tag">Light</span><span class="tag">Florida</span></div>
+        <a class="open" href="option2.html">View Option 2 →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="swatch s3">Aa · Bold</div>
+      <div class="body">
+        <h3>Option 3 — Bold Mobile</h3>
+        <p>Energetic dark theme, vivid amber, big condensed type and motion. Modern and dynamic — emphasizes the van and movement.</p>
+        <div class="tags"><span class="tag">Bold</span><span class="tag">Modern</span><span class="tag">Dynamic</span></div>
+        <a class="open" href="option3.html">View Option 3 →</a>
+      </div>
+    </div>
+  </div>
+  <p class="note">Once you choose, we make that file the site’s <code>index.html</code> and publish to GitHub Pages. Placeholder items to replace before launch: real photos/videos of the van, actual client testimonials, phone number, email, and logo. Colors and fonts are fully adjustable.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CREDIT HOME — We Bring Real Estate To Your Door | Central Florida</title>
+<meta name="description" content="Real estate that moves. CREDIT HOME's custom mobile office brings buying and selling straight to you across Central Florida. Consultation to closing, on your terms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0d; --bg2:#131317; --card:#17171c;
+    --amber:#ff6b2c; --amber-2:#ffb020; --ink:#f5f3ef; --muted:#9b9ba6;
+    --line:rgba(255,255,255,.09);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.dsp{font-family:'Archivo',sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:'Archivo';font-size:.8rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+  .btn{display:inline-block;padding:16px 32px;border-radius:100px;font-weight:700;font-family:'Archivo';font-size:.95rem;letter-spacing:.02em;transition:.22s}
+  .btn-amber{background:linear-gradient(100deg,var(--amber),var(--amber-2));color:#180a02}
+  .btn-amber:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,107,44,.35)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{font-family:'Archivo';font-weight:900;font-size:1.4rem;letter-spacing:-.01em}
+  .brand span{color:var(--amber)}
+  .navlinks{display:flex;gap:32px;align-items:center}
+  .navlinks a{font-size:.93rem;color:var(--muted);font-weight:500}
+  .navlinks a:hover{color:var(--ink)}
+  .menu-btn{display:none;background:none;border:0;color:var(--ink);font-size:1.6rem;cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding:70px 0 60px;
+    background:radial-gradient(900px 420px at 20% 0,rgba(255,107,44,.16),transparent 60%),var(--bg)}
+  .kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.82rem;color:var(--muted)}
+  .kicker .live{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(255,107,44,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,107,44,0)}100%{box-shadow:0 0 0 0 rgba(255,107,44,0)}}
+  .hero h1{font-size:clamp(3rem,8.5vw,6.4rem);margin:22px 0;text-transform:uppercase}
+  .hero h1 .out{color:transparent;-webkit-text-stroke:1.5px var(--amber)}
+  .hero h1 .fill{background:linear-gradient(100deg,var(--amber),var(--amber-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;margin-top:10px}
+  .hero p.lead{font-size:1.16rem;color:var(--muted);max-width:40ch}
+  .hero .cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+  .marquee{margin-top:52px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0}
+  .marquee .track{display:inline-block;animation:scroll 22s linear infinite;font-family:'Archivo';font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.02em}
+  .marquee .track span{color:var(--muted);margin:0 8px}
+  .marquee .track b{color:var(--amber)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section.blk{padding:96px 0}
+  .sec-head{max-width:680px;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:16px 0;text-transform:uppercase}
+  .sec-head p{color:var(--muted);font-size:1.08rem}
+
+  /* WHY big list */
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .why .card{padding:34px 28px;border-right:1px solid var(--line);transition:.25s}
+  .why .card:last-child{border-right:0}
+  .why .card:hover{background:var(--card)}
+  .why .big{font-family:'Archivo';font-size:2.6rem;font-weight:900;color:var(--amber);margin-bottom:8px}
+  .why h3{font-size:1.25rem;margin-bottom:8px;text-transform:uppercase}
+  .why p{font-size:.92rem;color:var(--muted)}
+
+  /* VAN feature */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .vanbox{background:linear-gradient(160deg,#1a1a20,#0e0e12);border:1px solid var(--line);border-radius:24px;padding:40px;position:relative;overflow:hidden}
+  .vanbox::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 240px at 60% 30%,rgba(255,107,44,.14),transparent)}
+  .feature h2{font-size:clamp(2rem,4.4vw,3.2rem);text-transform:uppercase}
+  .flist{list-style:none;display:grid;gap:16px;margin-top:26px}
+  .flist li{display:flex;gap:14px;align-items:center;font-size:1.02rem;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .flist .idx{font-family:'Archivo';font-weight:800;color:var(--amber);font-size:.9rem;min-width:28px}
+
+  /* STEPS timeline */
+  .timeline{display:grid;gap:0}
+  .trow{display:grid;grid-template-columns:90px 1fr;gap:26px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline;transition:.2s}
+  .trow:hover{padding-left:8px}
+  .trow .tn{font-family:'Archivo';font-weight:900;font-size:2.4rem;color:transparent;-webkit-text-stroke:1.4px var(--amber)}
+  .trow h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:4px}
+  .trow p{color:var(--muted);max-width:60ch}
+
+  /* AREAS */
+  .areas{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:52px}
+  .areas h2{font-size:clamp(2rem,4vw,3rem);text-transform:uppercase}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .chip{border:1px solid var(--line);padding:10px 18px;border-radius:100px;font-family:'Archivo';font-weight:600;font-size:.9rem}
+  .chip.on{background:var(--amber);color:#180a02;border-color:var(--amber)}
+
+  /* TESTIMONIAL */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .stars{color:var(--amber);letter-spacing:3px;margin-bottom:14px}
+  .tcard p{font-size:1rem}
+  .who{margin-top:18px;display:flex;gap:12px;align-items:center}
+  .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--amber),var(--amber-2));color:#180a02;display:grid;place-items:center;font-weight:900;font-family:'Archivo'}
+  .who b{display:block;font-size:.92rem}.who small{color:var(--muted);font-size:.8rem}
+  .ph-note{margin-top:20px;font-size:.82rem;color:var(--amber)}
+
+  /* MISSION strip */
+  .mission{border-left:3px solid var(--amber);padding:8px 0 8px 32px}
+  .mission h2{font-size:clamp(1.7rem,3.4vw,2.6rem);text-transform:none;line-height:1.2;max-width:24ch}
+  .mission h2 span{color:var(--amber)}
+
+  /* FINAL */
+  .final{position:relative;overflow:hidden;text-align:center;border-radius:26px;padding:80px 30px;
+    background:radial-gradient(600px 300px at 50% 0,rgba(255,107,44,.22),transparent),var(--bg2);border:1px solid var(--line)}
+  .final h2{font-size:clamp(2.4rem,6vw,4.4rem);text-transform:uppercase;margin-bottom:16px}
+  .final p{color:var(--muted);max-width:50ch;margin:0 auto 30px}
+  .contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+  .fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+
+  /* van photo + note */
+  .vanimg{width:100%;border-radius:14px;display:block;position:relative}
+  .replace-note{display:block;margin-top:12px;font-family:'Archivo';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);text-align:center;position:relative}
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .gallery figure{position:relative;border-radius:16px;overflow:hidden;margin:0;border:1px solid var(--line)}
+  .gallery img{width:100%;height:230px;object-fit:cover;display:block;transition:.45s}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;background:linear-gradient(transparent,rgba(11,11,13,.9));font-family:'Archivo';font-weight:700;font-size:.8rem;color:#fff;text-transform:uppercase;letter-spacing:.02em}
+  .gallery .wide{grid-column:span 2}
+  /* form */
+  .cform{display:grid;gap:16px;max-width:660px;margin:0 auto;text-align:left;position:relative}
+  .cform .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cform label{display:block;font-family:'Archivo';font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .cform input,.cform select,.cform textarea{width:100%;margin-top:8px;background:#0e0e12;border:1px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--ink);font-family:'Sora',sans-serif;font-size:.95rem;text-transform:none;letter-spacing:normal}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--amber)}
+  .cform button{justify-self:center;cursor:pointer;border:0;margin-top:4px}
+  .cform .hp{position:absolute;left:-9999px}
+  .cform-alt{margin-top:22px;font-size:.92rem;color:var(--muted);position:relative}
+  .cform-alt a{color:var(--amber);border-bottom:1px solid var(--line)}
+  @media(max-width:900px){
+    .gallery{grid-template-columns:1fr 1fr}
+    .cform .row{grid-template-columns:1fr}
+    .hero-bottom,.feature,.areas{grid-template-columns:1fr;gap:34px}
+    .why{grid-template-columns:1fr 1fr}
+    .why .card:nth-child(2){border-right:0}.why .card{border-bottom:1px solid var(--line)}
+    .tgrid{grid-template-columns:1fr}
+    .navlinks{position:fixed;inset:76px 0 auto 0;flex-direction:column;background:var(--bg2);padding:22px;gap:18px;border-bottom:1px solid var(--line);display:none}
+    .navlinks.open{display:flex}.menu-btn{display:block}
+    .areas{padding:34px}
+  }
+  @media(max-width:560px){.why{grid-template-columns:1fr}.why .card{border-right:0}.trow{grid-template-columns:56px 1fr;gap:16px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">CREDIT<span>HOME</span></div>
+      <div class="navlinks" id="nav">
+        <a href="#why">Why Us</a>
+        <a href="#how">Process</a>
+        <a href="#areas">Areas</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="btn btn-amber" style="padding:11px 24px">Book Now</a>
+      </div>
+      <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="live"></span> Mobile real estate · Central Florida</span>
+    <h1><span class="fill">Real estate</span><br><span class="out">that comes</span><br>to you.</h1>
+    <div class="hero-bottom">
+      <p class="lead">CREDIT HOME runs a full-service real estate office inside a custom van. Consultation, tours, negotiation and closing — delivered to your door.</p>
+      <div>
+        <div class="cta">
+          <a href="#contact" class="btn btn-amber">Book Your Visit</a>
+          <a href="#how" class="btn btn-ghost">See the Process</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="track">
+      &nbsp;ALL FLORIDA <span>◆</span> <b>CENTRAL FLORIDA FOCUSED</b> <span>◆</span> RESIDENTIAL — NEW &amp; USED <span>◆</span> <b>WE DRIVE TO YOU</b> <span>◆</span> BUYERS &amp; SELLERS <span>◆</span>
+      &nbsp;ALL FLORIDA <span>◆</span> <b>CENTRAL FLORIDA FOCUSED</b> <span>◆</span> RESIDENTIAL — NEW &amp; USED <span>◆</span> <b>WE DRIVE TO YOU</b> <span>◆</span> BUYERS &amp; SELLERS <span>◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="blk" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Difference</span>
+      <h2>A concierge office on wheels.</h2>
+      <p>No commuting between offices, listings and title companies. One seamless, guided experience — brought straight to your door.</p>
+    </div>
+    <div class="why">
+      <div class="card"><div class="big">01</div><h3>Convenient</h3><p>Consultation to closing, delivered to your home or office.</p></div>
+      <div class="card"><div class="big">02</div><h3>Efficient</h3><p>One guided flow. No scattered appointments across town.</p></div>
+      <div class="card"><div class="big">03</div><h3>Personal</h3><p>Private, one-on-one attention built entirely around you.</p></div>
+      <div class="card"><div class="big">04</div><h3>Time-saving</h3><p>Premium service that fits your schedule, not ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE VAN -->
+<section class="blk" id="mobile" style="background:var(--bg2)">
+  <div class="wrap feature">
+    <div class="vanbox">
+      <img src="images/van.jpg" alt="CREDIT HOME custom mobile real estate office van" class="vanimg">
+      <span class="replace-note">Placeholder — swap for a photo of your van</span>
+    </div>
+    <div>
+      <span class="eyebrow">Inside the office</span>
+      <h2>Everything happens here.</h2>
+      <ul class="flist">
+        <li><span class="idx">01</span> Meet privately &amp; comfortably</li>
+        <li><span class="idx">02</span> View listings live on screens</li>
+        <li><span class="idx">03</span> Review documents &amp; negotiate</li>
+        <li><span class="idx">04</span> Complete closings on-site</li>
+        <li><span class="idx">05</span> Get driven to every showing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="blk" id="how">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">The Process</span><h2>Seven steps. Zero guesswork.</h2>
+      <p>Honest guidance from “just looking” to keys in hand.</p></div>
+    <div class="timeline">
+      <div class="trow"><div class="tn">01</div><div><h3>Consultation</h3><p>We start with a conversation to understand your goals and situation — buying or selling.</p></div></div>
+      <div class="trow"><div class="tn">02</div><div><h3>Get Pre-Approved</h3><p>I connect you with trusted lenders so you know exactly what you can afford.</p></div></div>
+      <div class="trow"><div class="tn">03</div><div><h3>Property Search</h3><p>I show you homes matched to your needs, budget and preferences.</p></div></div>
+      <div class="trow"><div class="tn">04</div><div><h3>Make the Offer</h3><p>Found the one? I guide you to a strong, competitive offer.</p></div></div>
+      <div class="trow"><div class="tn">05</div><div><h3>Contract &amp; Negotiation</h3><p>I handle the paperwork and negotiate the best possible terms on your behalf.</p></div></div>
+      <div class="trow"><div class="tn">06</div><div><h3>Transaction</h3><p>I coordinate inspections, financing and every step toward the finish line.</p></div></div>
+      <div class="trow"><div class="tn">07</div><div><h3>Closing</h3><p>We finish on-site — sign, celebrate, and get your keys.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="blk" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="mission">
+      <span class="eyebrow">Our Mission</span>
+      <h2 style="margin-top:14px">Guiding every client with <span>honesty, expertise</span> and personalized support — confident decisions, achieved smoothly.</h2>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="blk" id="showcase">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Listings &amp; Lifestyle</span><h2>The Central Florida lineup.</h2>
+      <p>Homes, interiors and neighborhoods we help clients buy and sell.</p></div>
+    <div class="gallery">
+      <figure class="wide"><img src="images/home-exterior.jpg" alt="Featured home at dusk"><figcaption>Featured · Orlando</figcaption></figure>
+      <figure><img src="images/interior-living.jpg" alt="Modern living room interior"><figcaption>Interiors</figcaption></figure>
+      <figure><img src="images/keys.jpg" alt="Keys to a new home"><figcaption>Closing day</figcaption></figure>
+      <figure><img src="images/home-white.jpg" alt="Modern pool home"><figcaption>New build</figcaption></figure>
+      <figure><img src="images/home-modern.jpg" alt="Classic Florida home with porch"><figcaption>Resale</figcaption></figure>
+      <figure class="wide"><img src="images/florida-palms.jpg" alt="Florida coastal lifestyle"><figcaption>The lifestyle</figcaption></figure>
+    </div>
+    <p class="ph-note">↳ Swap these for your own listing photos &amp; past sales.</p>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="blk" id="areas">
+  <div class="wrap">
+    <div class="areas">
+      <div>
+        <span class="eyebrow">Coverage</span>
+        <h2 style="margin-top:14px">All Florida.<br>Rooted in Central.</h2>
+        <p style="color:var(--muted);margin-top:12px">Residential properties, new and used — wherever you are, the office rolls to you.</p>
+      </div>
+      <div class="chips">
+        <span class="chip on">Orlando</span><span class="chip on">Kissimmee</span><span class="chip on">Lakeland</span>
+        <span class="chip">Winter Park</span><span class="chip">Sanford</span><span class="chip">Clermont</span>
+        <span class="chip">Davenport</span><span class="chip">Deltona</span><span class="chip">Statewide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="blk" id="reviews" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Client Experience</span><h2>Word travels fast.</h2></div>
+    <div class="tgrid">
+      <div class="tcard"><div class="stars">★★★★★</div><p>“They brought the whole closing to my living room. Smoothest home purchase I’ve ever had.”</p><div class="who"><div class="avatar">M</div><div><b>Maria R.</b><small>Orlando, FL</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>“First-time buyers here — they made every number make sense. Zero stress, all honesty.”</p><div class="who"><div class="avatar">J</div><div><b>James &amp; Ana</b><small>Kissimmee, FL</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>“Sold above asking and never drove to an office once. Total game-changer.”</p><div class="who"><div class="avatar">D</div><div><b>David T.</b><small>Lakeland, FL</small></div></div></div>
+    </div>
+    <p class="ph-note">↳ Placeholder reviews — swap in your real client testimonials.</p>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="blk" id="contact">
+  <div class="wrap">
+    <div class="final">
+      <span class="eyebrow">Let's roll</span>
+      <h2>Bring the office<br>to my door.</h2>
+      <p>Book a free consultation and we’ll come to you anywhere in Central Florida — buying or selling.</p>
+      <form class="cform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New inquiry from CREDIT HOME website">
+        <input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <label>Full name<input type="text" name="name" required></label>
+          <label>Phone<input type="tel" name="phone"></label>
+        </div>
+        <div class="row">
+          <label>Email<input type="email" name="email" required></label>
+          <label>I’d like to<select name="intent"><option>Buy a home</option><option>Sell a home</option><option>Buy &amp; sell</option><option>Just exploring</option></select></label>
+        </div>
+        <label>Your area in Florida<input type="text" name="area" placeholder="e.g. Orlando, Kissimmee, Lakeland…"></label>
+        <label>How can we help?<textarea name="message" rows="4"></textarea></label>
+        <button type="submit" class="btn btn-amber">Book My Visit</button>
+      </form>
+      <p class="cform-alt">Prefer to reach out directly? <a href="tel:+10000000000">Call or text</a> · <a href="mailto:hello@credithome.com">Email us</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fbar">
+    <div class="brand">CREDIT<span>HOME</span></div>
+    <div>Serving all of Florida · Central Florida focused · Residential — new &amp; used</div>
+    <div>© 2026 CREDIT HOME</div>
+  </div>
+</footer>
+</body>
+</html>

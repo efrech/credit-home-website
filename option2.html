@@ -122,7 +122,8 @@
   .brand-logo{height:42px;width:auto;display:block}
   .foot-logo{height:40px;width:auto}
   .foot-realtor{height:60px;width:auto}
-  .foot-info{text-align:center;flex:1}
+  .foot-brand{display:flex;align-items:center;gap:18px}
+  .foot-info{text-align:right;flex:1}
   .wa-fab{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.22);z-index:60;transition:.18s}
   .wa-fab:hover{transform:scale(1.08)}
   .wa-fab svg{width:32px;height:32px}
@@ -349,12 +350,14 @@
 
 <footer>
   <div class="wrap fbar">
-    <img src="images/credit-home-logo.jpg" alt="CREDIT HOME" class="foot-logo">
+    <div class="foot-brand">
+      <img src="images/credit-home-logo.jpg" alt="CREDIT HOME" class="foot-logo">
+      <img src="images/realtor-logo.jpg" alt="REALTOR® — member, National Association of Realtors" class="foot-realtor">
+    </div>
     <div class="foot-info">
       <div data-i18n="foot.info1">Serving all of Florida · Buy · Sell · Rent · <a href="https://www.facebook.com/credithomeorlando/" target="_blank" rel="noopener">Facebook</a></div>
       <div data-i18n="foot.info2">Manuel Girona · REALTOR® · <a href="tel:+13216957040">(321) 695-7040</a> · © 2026 CREDIT HOME</div>
     </div>
-    <img src="images/realtor-logo.jpg" alt="REALTOR® — member, National Association of Realtors" class="foot-realtor">
   </div>
 </footer>
 
@@ -363,11 +366,11 @@
 <script>
   var ES = {
     "nav.why":"Por qué","nav.how":"Cómo funciona","nav.areas":"Zonas","nav.reviews":"Reseñas","nav.start":"Empezar",
-    "hero.eyebrow":"Bienes raíces móviles · Toda la Florida",
-    "hero.h1":"Tu oficina de bienes raíces, <span>en tu entrada.</span>",
+    "hero.eyebrow":"Bienes raíces que van a ti · Sirviendo a toda Florida",
+    "hero.h1":"Tu oficina de bienes raíces, <span>hasta tu puerta.</span>",
     "hero.lead":"CREDIT HOME lleva toda la experiencia de comprar, vender y rentar hasta ti — desde la consulta hasta el cierre, todo dentro de nuestra oficina móvil.",
-    "hero.cta1":"Reserva una consulta gratis","hero.cta2":"Cómo funciona",
-    "badge.fl":"Toda la Florida","badge.rentals":"Casas y rentas","badge.bsr":"Compra · Vende · Renta",
+    "hero.cta1":"Programa tu consulta gratis","hero.cta2":"Cómo funciona",
+    "badge.fl":"Toda Florida","badge.rentals":"Casas y rentas","badge.bsr":"Compra · Vende · Renta",
     "float.1":"Pre-aprobado y listo","float.2":"Cierre en el lugar",
     "why.eyebrow":"Por qué móvil",
     "why.h2":"Todo lo que hace una oficina de bienes raíces — frente a tu puerta.",
@@ -393,11 +396,11 @@
     "s6t":"Cierre","s6p":"Inspecciones, financiamiento y firma — todo en el lugar.",
     "show.eyebrow":"Propiedades y estilo de vida",
     "show.h2":"Casas que ayudamos a amar.",
-    "show.p":"Un vistazo a las propiedades, interiores y vecindarios por toda la Florida — muchas alrededor de $400K.",
+    "show.p":"Un vistazo a las propiedades, interiores y vecindarios por toda Florida — muchas alrededor de $400K.",
     "cap1":"Destacada · Orlando · ~$410K","cap2":"Interiores","cap3":"Día de cierre",
     "cap4":"Obra nueva · ~$430K","cap5":"Reventa · ~$385K","cap6":"El estilo de vida de Florida",
     "areas.eyebrow":"Dónde servimos",
-    "areas.h2":"Toda la Florida — la oficina llega a ti.",
+    "areas.h2":"Toda Florida — la oficina llega a ti.",
     "areas.p":"Casas y rentas, nuevas y usadas. Estés donde estés en Florida, llevamos toda la experiencia a tu puerta.",
     "areas.statewide":"+ todo el estado",
     "rev.eyebrow":"Clientes felices",
@@ -411,7 +414,7 @@
     "opt.buy":"Comprar casa","opt.sell":"Vender casa","opt.rent":"Rentar casa","opt.bs":"Comprar y vender","opt.explore":"Solo explorando",
     "f.area":"Tu zona en Florida","f.areaph":"ej. Orlando, Tampa, Miami…","f.help":"¿Cómo podemos ayudarte?","f.send":"Enviar solicitud",
     "final.alt":"¿Prefieres contactarnos directo? <a href=\"tel:+13216957040\">Llama (321) 695-7040</a> · <a href=\"sms:+13216957040\">Envía un texto</a> · <a href=\"https://wa.me/13216957040?text=Hola%20CREDIT%20HOME%2C%20quiero%20m%C3%A1s%20info\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> · <a href=\"mailto:info@credithome.com\">info@credithome.com</a>",
-    "foot.info1":"Servimos toda la Florida · Compra · Vende · Renta · <a href=\"https://www.facebook.com/credithomeorlando/\" target=\"_blank\" rel=\"noopener\">Facebook</a>",
+    "foot.info1":"Servimos toda Florida · Compra · Vende · Renta · <a href=\"https://www.facebook.com/credithomeorlando/\" target=\"_blank\" rel=\"noopener\">Facebook</a>",
     "foot.info2":"Manuel Girona · REALTOR® · <a href=\"tel:+13216957040\">(321) 695-7040</a> · © 2026 CREDIT HOME"
   };
   var EN = {};

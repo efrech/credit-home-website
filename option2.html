@@ -30,15 +30,16 @@
 
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{display:inline-flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink)}
-  .brand-mark{width:34px;height:34px;flex:none}
-  .brand .wm span{color:var(--blue)}
-  .navlinks{display:flex;gap:28px;align-items:center}
+  .brand{display:inline-flex;align-items:center;gap:10px}
+  .navlinks{display:flex;gap:24px;align-items:center}
   .navlinks a{font-size:.94rem;color:var(--muted);font-weight:500}
   .navlinks a:hover{color:var(--blue)}
   .navlinks a.btn-blue{color:#fff}
   .navlinks a.btn-blue:hover{color:#fff}
   .navlinks a.fb{display:inline-flex;align-items:center;color:var(--blue)}
+  .langtoggle{display:inline-flex;border:1px solid var(--line);border-radius:100px;overflow:hidden}
+  .langbtn{background:#fff;border:0;padding:6px 12px;font-size:.8rem;font-weight:700;color:var(--muted);cursor:pointer;font-family:inherit;transition:.15s}
+  .langbtn.on{background:var(--blue);color:#fff}
   .menu-btn{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
 
   /* HERO */
@@ -152,6 +153,7 @@
     .navlinks{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:#fff;padding:22px;gap:18px;border-bottom:1px solid var(--line);display:none}
     .navlinks.open{display:flex}.menu-btn{display:block}
     .areas{padding:38px}
+    .fbar{justify-content:center;text-align:center}
   }
   @media(max-width:560px){.why{grid-template-columns:1fr}}
 </style>
@@ -162,12 +164,16 @@
     <nav>
       <div class="brand"><img src="images/credit-home-logo.jpg" alt="CREDIT HOME — mobile real estate" class="brand-logo"></div>
       <div class="navlinks" id="nav">
-        <a href="#why">Why Us</a>
-        <a href="#how">How It Works</a>
-        <a href="#areas">Areas</a>
-        <a href="#reviews">Reviews</a>
+        <a href="#why" data-i18n="nav.why">Why Us</a>
+        <a href="#how" data-i18n="nav.how">How It Works</a>
+        <a href="#areas" data-i18n="nav.areas">Areas</a>
+        <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
         <a href="https://www.facebook.com/credithomeorlando/" target="_blank" rel="noopener" class="fb" aria-label="Facebook">Facebook</a>
-        <a href="#contact" class="btn btn-blue" style="padding:11px 22px">Get Started</a>
+        <div class="langtoggle" role="group" aria-label="Language">
+          <button type="button" class="langbtn on" data-lang="en" onclick="setLang('en')">EN</button>
+          <button type="button" class="langbtn" data-lang="es" onclick="setLang('es')">ES</button>
+        </div>
+        <a href="#contact" class="btn btn-blue" style="padding:11px 22px" data-i18n="nav.start">Get Started</a>
       </div>
       <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     </nav>
@@ -178,17 +184,17 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Mobile Real Estate · All of Florida</span>
-      <h1>Your real estate office, <span>on your driveway.</span></h1>
-      <p class="lead">CREDIT HOME brings the full buying, selling and renting experience to you — consultation to closing, all inside our custom mobile office.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Mobile Real Estate · All of Florida</span>
+      <h1 data-i18n="hero.h1">Your real estate office, <span>on your driveway.</span></h1>
+      <p class="lead" data-i18n="hero.lead">CREDIT HOME brings the full buying, selling and renting experience to you — consultation to closing, all inside our custom mobile office.</p>
       <div class="cta">
-        <a href="#contact" class="btn btn-blue">Book a Free Consultation</a>
-        <a href="#how" class="btn btn-ghost">How It Works</a>
+        <a href="#contact" class="btn btn-blue" data-i18n="hero.cta1">Book a Free Consultation</a>
+        <a href="#how" class="btn btn-ghost" data-i18n="hero.cta2">How It Works</a>
       </div>
       <div class="badges">
-        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> All of Florida</span>
-        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Homes &amp; rentals</span>
-        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Buy · Sell · Rent</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="badge.fl">All of Florida</span></span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="badge.rentals">Homes &amp; rentals</span></span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="badge.bsr">Buy · Sell · Rent</span></span>
       </div>
     </div>
     <div class="hero-visual">
@@ -197,8 +203,8 @@
           <img src="images/van.jpg" alt="CREDIT HOME mobile real estate office van" class="vanimg">
         </div>
       </div>
-      <div class="float f1"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span> Pre-approved &amp; ready</div>
-      <div class="float f2"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14"/></svg></span> Closing on-site</div>
+      <div class="float f1"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="float.1">Pre-approved &amp; ready</span></div>
+      <div class="float f2"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14"/></svg></span> <span data-i18n="float.2">Closing on-site</span></div>
     </div>
   </div>
 </section>
@@ -207,15 +213,15 @@
 <section class="blk" id="why">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Why go mobile</span>
-      <h2>Everything a real estate office does — parked outside your door.</h2>
-      <p>Private meetings, live listings on screen, document review, negotiation, and closing. We even drive you to every showing.</p>
+      <span class="eyebrow" data-i18n="why.eyebrow">Why go mobile</span>
+      <h2 data-i18n="why.h2">Everything a real estate office does — parked outside your door.</h2>
+      <p data-i18n="why.p">Private meetings, live listings on screen, document review, negotiation, and closing. We even drive you to every showing.</p>
     </div>
     <div class="why">
-      <div class="card"><div class="ico" style="background:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12l2-2 7-7 7 7 2 2M5 10v10h14V10"/></svg></div><h3>Convenient</h3><p>No offices, no commuting. The whole experience comes to you.</p></div>
-      <div class="card"><div class="ico" style="background:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3>Efficient</h3><p>One seamless, guided flow from first hello to final signature.</p></div>
-      <div class="card"><div class="ico" style="background:var(--ink)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div><h3>Personal</h3><p>One-on-one attention in a space built entirely around you.</p></div>
-      <div class="card"><div class="ico" style="background:var(--blue-d)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Time-saving</h3><p>Real estate that fits your schedule — not the other way around.</p></div>
+      <div class="card"><div class="ico" style="background:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12l2-2 7-7 7 7 2 2M5 10v10h14V10"/></svg></div><h3 data-i18n="why.c1t">Convenient</h3><p data-i18n="why.c1p">No offices, no commuting. The whole experience comes to you.</p></div>
+      <div class="card"><div class="ico" style="background:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3 data-i18n="why.c2t">Efficient</h3><p data-i18n="why.c2p">One seamless, guided flow from first hello to final signature.</p></div>
+      <div class="card"><div class="ico" style="background:var(--ink)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div><h3 data-i18n="why.c3t">Personal</h3><p data-i18n="why.c3p">One-on-one attention in a space built entirely around you.</p></div>
+      <div class="card"><div class="ico" style="background:var(--blue-d)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3 data-i18n="why.c4t">Time-saving</h3><p data-i18n="why.c4p">Real estate that fits your schedule — not the other way around.</p></div>
     </div>
   </div>
 </section>
@@ -224,19 +230,19 @@
 <section class="blk" id="mobile" style="background:var(--sky2)">
   <div class="wrap split">
     <div>
-      <span class="eyebrow">The mobile office</span>
-      <h2>Step inside a full real estate experience.</h2>
-      <p>Our custom van is a private, professional office on wheels — so buying, selling or renting your home feels effortless from the very first meeting.</p>
-      <a href="#contact" class="btn btn-blue" style="margin-top:22px">Reserve Your Visit</a>
+      <span class="eyebrow" data-i18n="split.eyebrow">The mobile office</span>
+      <h2 data-i18n="split.h2">Step inside a full real estate experience.</h2>
+      <p data-i18n="split.p">Our custom van is a private, professional office on wheels — so buying, selling or renting your home feels effortless from the very first meeting.</p>
+      <a href="#contact" class="btn btn-blue" style="margin-top:22px" data-i18n="split.btn">Reserve Your Visit</a>
     </div>
     <div class="panel">
       <ul class="checklist">
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Meet privately &amp; comfortably</li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> View property listings on screens</li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Review documents together</li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Handle negotiations on the spot</li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Complete closings on-site</li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Get driven to every showing</li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="ck.1">Meet privately &amp; comfortably</span></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="ck.2">View property listings on screens</span></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="ck.3">Review documents together</span></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="ck.4">Handle negotiations on the spot</span></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="ck.5">Complete closings on-site</span></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="ck.6">Get driven to every showing</span></li>
       </ul>
     </div>
   </div>
@@ -246,17 +252,17 @@
 <section class="blk" id="how">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Simple steps</span>
-      <h2>From first chat to your new front door.</h2>
-      <p>Clear, honest guidance the whole way — so you always know what happens next.</p>
+      <span class="eyebrow" data-i18n="how.eyebrow">Simple steps</span>
+      <h2 data-i18n="how.h2">From first chat to your new front door.</h2>
+      <p data-i18n="how.p">Clear, honest guidance the whole way — so you always know what happens next.</p>
     </div>
     <div class="steps">
-      <div class="stepcard"><div class="n"></div><h3>Consultation</h3><p>We talk through your goals — buying, selling or renting.</p></div>
-      <div class="stepcard"><div class="n"></div><h3>Financial review</h3><p>I connect you with trusted lenders and get you pre-approved.</p></div>
-      <div class="stepcard"><div class="n"></div><h3>Property search</h3><p>I show homes matched to your needs, budget and preferences.</p></div>
-      <div class="stepcard"><div class="n"></div><h3>Make an offer</h3><p>Found the one? I guide you to a strong, competitive offer.</p></div>
-      <div class="stepcard"><div class="n"></div><h3>Contract &amp; negotiation</h3><p>I handle paperwork and negotiate the best terms for you.</p></div>
-      <div class="stepcard"><div class="n"></div><h3>Closing</h3><p>Inspections, financing, and signing — finished right on-site.</p></div>
+      <div class="stepcard"><div class="n"></div><h3 data-i18n="s1t">Consultation</h3><p data-i18n="s1p">We talk through your goals — buying, selling or renting.</p></div>
+      <div class="stepcard"><div class="n"></div><h3 data-i18n="s2t">Financial review</h3><p data-i18n="s2p">I connect you with trusted lenders and get you pre-approved.</p></div>
+      <div class="stepcard"><div class="n"></div><h3 data-i18n="s3t">Property search</h3><p data-i18n="s3p">I show homes matched to your needs, budget and preferences.</p></div>
+      <div class="stepcard"><div class="n"></div><h3 data-i18n="s4t">Make an offer</h3><p data-i18n="s4p">Found the one? I guide you to a strong, competitive offer.</p></div>
+      <div class="stepcard"><div class="n"></div><h3 data-i18n="s5t">Contract &amp; negotiation</h3><p data-i18n="s5p">I handle paperwork and negotiate the best terms for you.</p></div>
+      <div class="stepcard"><div class="n"></div><h3 data-i18n="s6t">Closing</h3><p data-i18n="s6p">Inspections, financing, and signing — finished right on-site.</p></div>
     </div>
   </div>
 </section>
@@ -265,17 +271,17 @@
 <section class="blk" id="showcase" style="background:#fff">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Listings &amp; lifestyle</span>
-      <h2>Homes we help people love.</h2>
-      <p>A peek at the properties, interiors and neighborhoods across Florida — many in the ~$400K range.</p>
+      <span class="eyebrow" data-i18n="show.eyebrow">Listings &amp; lifestyle</span>
+      <h2 data-i18n="show.h2">Homes we help people love.</h2>
+      <p data-i18n="show.p">A peek at the properties, interiors and neighborhoods across Florida — many in the ~$400K range.</p>
     </div>
     <div class="gallery">
-      <figure class="wide"><img src="images/home-exterior.jpg" alt="Featured home at dusk"><figcaption>Featured · Orlando · ~$410K</figcaption></figure>
-      <figure><img src="images/interior-living.jpg" alt="Modern living room interior"><figcaption>Interiors</figcaption></figure>
-      <figure><img src="images/keys.jpg" alt="Keys to a new home"><figcaption>Closing day</figcaption></figure>
-      <figure><img src="images/home-white.jpg" alt="Modern pool home"><figcaption>New build · ~$430K</figcaption></figure>
-      <figure><img src="images/home-modern.jpg" alt="Classic Florida home with porch"><figcaption>Resale · ~$385K</figcaption></figure>
-      <figure class="wide"><img src="images/florida-palms.jpg" alt="Florida coastal lifestyle"><figcaption>The Florida lifestyle</figcaption></figure>
+      <figure class="wide"><img src="images/home-exterior.jpg" alt="Featured home at dusk"><figcaption data-i18n="cap1">Featured · Orlando · ~$410K</figcaption></figure>
+      <figure><img src="images/interior-living.jpg" alt="Modern living room interior"><figcaption data-i18n="cap2">Interiors</figcaption></figure>
+      <figure><img src="images/keys.jpg" alt="Keys to a new home"><figcaption data-i18n="cap3">Closing day</figcaption></figure>
+      <figure><img src="images/home-white.jpg" alt="Modern pool home"><figcaption data-i18n="cap4">New build · ~$430K</figcaption></figure>
+      <figure><img src="images/home-modern.jpg" alt="Classic Florida home with porch"><figcaption data-i18n="cap5">Resale · ~$385K</figcaption></figure>
+      <figure class="wide"><img src="images/florida-palms.jpg" alt="Florida coastal lifestyle"><figcaption data-i18n="cap6">The Florida lifestyle</figcaption></figure>
     </div>
   </div>
 </section>
@@ -285,14 +291,14 @@
   <div class="wrap">
     <div class="areas">
       <div>
-        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Where we serve</span>
-        <h2 style="margin-top:14px">All of Florida — the office comes to you.</h2>
-        <p>Homes and rentals, new and used. Wherever you are in Florida, we bring the full experience to your door.</p>
+        <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff" data-i18n="areas.eyebrow">Where we serve</span>
+        <h2 style="margin-top:14px" data-i18n="areas.h2">All of Florida — the office comes to you.</h2>
+        <p data-i18n="areas.p">Homes and rentals, new and used. Wherever you are in Florida, we bring the full experience to your door.</p>
       </div>
       <div class="chips">
         <span class="chip">Orlando</span><span class="chip">Tampa</span><span class="chip">Miami</span>
         <span class="chip">Jacksonville</span><span class="chip">Kissimmee</span><span class="chip">Lakeland</span>
-        <span class="chip">Fort Lauderdale</span><span class="chip">Sarasota</span><span class="chip">+ statewide</span>
+        <span class="chip">Fort Lauderdale</span><span class="chip">Sarasota</span><span class="chip" data-i18n="areas.statewide">+ statewide</span>
       </div>
     </div>
   </div>
@@ -301,11 +307,11 @@
 <!-- REVIEWS -->
 <section class="blk" id="reviews" style="background:var(--sky2)">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Happy clients</span><h2>People love the door-to-door difference.</h2></div>
+    <div class="sec-head"><span class="eyebrow" data-i18n="rev.eyebrow">Happy clients</span><h2 data-i18n="rev.h2">People love the door-to-door difference.</h2></div>
     <div class="tgrid">
-      <div class="tcard"><div class="stars">★★★★★</div><p>“They brought everything to my living room and made my first home purchase completely stress-free.”</p><div class="who"><div class="avatar">M</div><div><b>Maria R.</b><small>Orlando, FL</small></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><p>“Honest, patient, and so easy to work with. We felt informed at every single step.”</p><div class="who"><div class="avatar">J</div><div><b>James &amp; Ana</b><small>Tampa, FL</small></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><p>“Sold above asking and never drove to an office once. The mobile service is genius.”</p><div class="who"><div class="avatar">D</div><div><b>David T.</b><small>Miami, FL</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p data-i18n="t1">“They brought everything to my living room and made my first home purchase completely stress-free.”</p><div class="who"><div class="avatar">M</div><div><b>Maria R.</b><small>Orlando, FL</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p data-i18n="t2">“Honest, patient, and so easy to work with. We felt informed at every single step.”</p><div class="who"><div class="avatar">J</div><div><b>James &amp; Ana</b><small>Tampa, FL</small></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p data-i18n="t3">“Sold above asking and never drove to an office once. The mobile service is genius.”</p><div class="who"><div class="avatar">D</div><div><b>David T.</b><small>Miami, FL</small></div></div></div>
     </div>
   </div>
 </section>
@@ -314,25 +320,25 @@
 <section class="blk" id="contact">
   <div class="wrap">
     <div class="final">
-      <h2>Ready when you are.</h2>
-      <p>Book a free, no-pressure consultation and we’ll bring the office to your door anywhere in Florida.</p>
+      <h2 data-i18n="final.h2">Ready when you are.</h2>
+      <p data-i18n="final.p">Book a free, no-pressure consultation and we’ll bring the office to your door anywhere in Florida.</p>
       <form class="cform" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
         <input type="hidden" name="subject" value="New inquiry from CREDIT HOME website">
         <input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
         <div class="row">
-          <label>Full name<input type="text" name="name" required></label>
-          <label>Phone<input type="tel" name="phone"></label>
+          <label><span data-i18n="f.name">Full name</span><input type="text" name="name" required></label>
+          <label><span data-i18n="f.phone">Phone</span><input type="tel" name="phone"></label>
         </div>
         <div class="row">
-          <label>Email<input type="email" name="email" required></label>
-          <label>I’d like to<select name="intent"><option>Buy a home</option><option>Sell a home</option><option>Rent a home</option><option>Buy &amp; sell</option><option>Just exploring</option></select></label>
+          <label><span data-i18n="f.email">Email</span><input type="email" name="email" required></label>
+          <label><span data-i18n="f.intent">I’d like to</span><select name="intent"><option data-i18n="opt.buy">Buy a home</option><option data-i18n="opt.sell">Sell a home</option><option data-i18n="opt.rent">Rent a home</option><option data-i18n="opt.bs">Buy &amp; sell</option><option data-i18n="opt.explore">Just exploring</option></select></label>
         </div>
-        <label>Your area in Florida<input type="text" name="area" placeholder="e.g. Orlando, Tampa, Miami…"></label>
-        <label>How can we help?<textarea name="message" rows="4"></textarea></label>
-        <button type="submit" class="btn btn-blue">Send My Request</button>
+        <label><span data-i18n="f.area">Your area in Florida</span><input type="text" name="area" data-i18n-ph="f.areaph" placeholder="e.g. Orlando, Tampa, Miami…"></label>
+        <label><span data-i18n="f.help">How can we help?</span><textarea name="message" rows="4"></textarea></label>
+        <button type="submit" class="btn btn-blue" data-i18n="f.send">Send My Request</button>
       </form>
-      <p class="cform-alt">Prefer to reach out directly? <a href="tel:+13216957040">Call (321) 695-7040</a> · <a href="sms:+13216957040">Text us</a> · <a href="mailto:info@credithome.com">info@credithome.com</a></p>
+      <p class="cform-alt" data-i18n="final.alt">Prefer to reach out directly? <a href="tel:+13216957040">Call (321) 695-7040</a> · <a href="sms:+13216957040">Text us</a> · <a href="mailto:info@credithome.com">info@credithome.com</a></p>
       <p class="cform-realtor">Manuel Girona · REALTOR® · CREDIT HOME</p>
     </div>
   </div>
@@ -342,11 +348,88 @@
   <div class="wrap fbar">
     <img src="images/credit-home-logo.jpg" alt="CREDIT HOME" class="foot-logo">
     <div class="foot-info">
-      <div>Serving all of Florida · Buy · Sell · Rent · <a href="https://www.facebook.com/credithomeorlando/" target="_blank" rel="noopener">Facebook</a></div>
-      <div>Manuel Girona · REALTOR® · <a href="tel:+13216957040">(321) 695-7040</a> · © 2026 CREDIT HOME</div>
+      <div data-i18n="foot.info1">Serving all of Florida · Buy · Sell · Rent · <a href="https://www.facebook.com/credithomeorlando/" target="_blank" rel="noopener">Facebook</a></div>
+      <div data-i18n="foot.info2">Manuel Girona · REALTOR® · <a href="tel:+13216957040">(321) 695-7040</a> · © 2026 CREDIT HOME</div>
     </div>
     <img src="images/realtor-logo.jpg" alt="REALTOR® — member, National Association of Realtors" class="foot-realtor">
   </div>
 </footer>
+
+<script>
+  var ES = {
+    "nav.why":"Por qué","nav.how":"Cómo funciona","nav.areas":"Zonas","nav.reviews":"Reseñas","nav.start":"Empezar",
+    "hero.eyebrow":"Bienes raíces móviles · Toda la Florida",
+    "hero.h1":"Tu oficina de bienes raíces, <span>en tu entrada.</span>",
+    "hero.lead":"CREDIT HOME lleva toda la experiencia de comprar, vender y rentar hasta ti — desde la consulta hasta el cierre, todo dentro de nuestra oficina móvil.",
+    "hero.cta1":"Reserva una consulta gratis","hero.cta2":"Cómo funciona",
+    "badge.fl":"Toda la Florida","badge.rentals":"Casas y rentas","badge.bsr":"Compra · Vende · Renta",
+    "float.1":"Pre-aprobado y listo","float.2":"Cierre en el lugar",
+    "why.eyebrow":"Por qué móvil",
+    "why.h2":"Todo lo que hace una oficina de bienes raíces — frente a tu puerta.",
+    "why.p":"Reuniones privadas, propiedades en pantalla, revisión de documentos, negociación y cierre. Incluso te llevamos a cada visita.",
+    "why.c1t":"Conveniente","why.c1p":"Sin oficinas ni traslados. Toda la experiencia llega a ti.",
+    "why.c2t":"Eficiente","why.c2p":"Un proceso guiado y fluido, del primer saludo a la firma final.",
+    "why.c3t":"Personal","why.c3p":"Atención personalizada en un espacio pensado solo para ti.",
+    "why.c4t":"Ahorra tiempo","why.c4p":"Bienes raíces que se ajustan a tu horario — no al revés.",
+    "split.eyebrow":"La oficina móvil",
+    "split.h2":"Entra a una experiencia completa de bienes raíces.",
+    "split.p":"Nuestra van personalizada es una oficina privada y profesional sobre ruedas — para que comprar, vender o rentar tu casa sea fácil desde la primera reunión.",
+    "split.btn":"Reserva tu visita",
+    "ck.1":"Reúnete en privado y con comodidad","ck.2":"Ve propiedades en pantallas","ck.3":"Revisa documentos juntos",
+    "ck.4":"Negocia en el momento","ck.5":"Cierra en el lugar","ck.6":"Te llevamos a cada visita",
+    "how.eyebrow":"Pasos sencillos",
+    "how.h2":"De la primera charla a tu nueva puerta.",
+    "how.p":"Orientación clara y honesta en todo momento — para que siempre sepas qué sigue.",
+    "s1t":"Consulta","s1p":"Hablamos de tus metas — comprar, vender o rentar.",
+    "s2t":"Revisión financiera","s2p":"Te conecto con prestamistas de confianza y te pre-apruebo.",
+    "s3t":"Búsqueda de propiedades","s3p":"Te muestro casas según tus necesidades, presupuesto y preferencias.",
+    "s4t":"Haz una oferta","s4p":"¿Encontraste la ideal? Te guío a una oferta fuerte y competitiva.",
+    "s5t":"Contrato y negociación","s5p":"Me encargo del papeleo y negocio las mejores condiciones para ti.",
+    "s6t":"Cierre","s6p":"Inspecciones, financiamiento y firma — todo en el lugar.",
+    "show.eyebrow":"Propiedades y estilo de vida",
+    "show.h2":"Casas que ayudamos a amar.",
+    "show.p":"Un vistazo a las propiedades, interiores y vecindarios por toda la Florida — muchas alrededor de $400K.",
+    "cap1":"Destacada · Orlando · ~$410K","cap2":"Interiores","cap3":"Día de cierre",
+    "cap4":"Obra nueva · ~$430K","cap5":"Reventa · ~$385K","cap6":"El estilo de vida de Florida",
+    "areas.eyebrow":"Dónde servimos",
+    "areas.h2":"Toda la Florida — la oficina llega a ti.",
+    "areas.p":"Casas y rentas, nuevas y usadas. Estés donde estés en Florida, llevamos toda la experiencia a tu puerta.",
+    "areas.statewide":"+ todo el estado",
+    "rev.eyebrow":"Clientes felices",
+    "rev.h2":"A la gente le encanta la diferencia puerta a puerta.",
+    "t1":"“Trajeron todo a mi sala e hicieron que mi primera compra de casa fuera totalmente sin estrés.”",
+    "t2":"“Honesto, paciente y muy fácil de tratar. Nos sentimos informados en cada paso.”",
+    "t3":"“Vendí por encima del precio pedido y nunca fui a una oficina. El servicio móvil es genial.”",
+    "final.h2":"Cuando estés listo.",
+    "final.p":"Reserva una consulta gratis y sin compromiso, y llevamos la oficina a tu puerta en cualquier lugar de Florida.",
+    "f.name":"Nombre completo","f.phone":"Teléfono","f.email":"Correo","f.intent":"Quiero",
+    "opt.buy":"Comprar casa","opt.sell":"Vender casa","opt.rent":"Rentar casa","opt.bs":"Comprar y vender","opt.explore":"Solo explorando",
+    "f.area":"Tu zona en Florida","f.areaph":"ej. Orlando, Tampa, Miami…","f.help":"¿Cómo podemos ayudarte?","f.send":"Enviar solicitud",
+    "final.alt":"¿Prefieres contactarnos directo? <a href=\"tel:+13216957040\">Llama (321) 695-7040</a> · <a href=\"sms:+13216957040\">Envía un texto</a> · <a href=\"mailto:info@credithome.com\">info@credithome.com</a>",
+    "foot.info1":"Servimos toda la Florida · Compra · Vende · Renta · <a href=\"https://www.facebook.com/credithomeorlando/\" target=\"_blank\" rel=\"noopener\">Facebook</a>",
+    "foot.info2":"Manuel Girona · REALTOR® · <a href=\"tel:+13216957040\">(321) 695-7040</a> · © 2026 CREDIT HOME"
+  };
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ EN['ph:'+el.getAttribute('data-i18n-ph')] = el.getAttribute('placeholder'); });
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      el.innerHTML = (lang==='es' && ES[k]!=null) ? ES[k] : EN[k];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+      var k = el.getAttribute('data-i18n-ph');
+      el.setAttribute('placeholder', (lang==='es' && ES['ph:'+k]!=null) ? ES['ph:'+k] : EN['ph:'+k]);
+    });
+    document.querySelectorAll('.langbtn').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang')===lang); });
+    try{ localStorage.setItem('ch_lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved = 'en';
+    try{ saved = localStorage.getItem('ch_lang') || 'en'; }catch(e){}
+    if(saved==='es') setLang('es'); else setLang('en');
+  })();
+</script>
 </body>
 </html>
